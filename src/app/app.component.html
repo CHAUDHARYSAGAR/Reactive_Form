@@ -1,0 +1,32 @@
+<app-stepper
+  [steps]="steps"
+  [currentStepIndex]="currentStep"
+  (stepChanged)="onStepChanged($event)">
+
+<ng-container [formGroup]="parentForm" [ngSwitch]="currentStep">
+  <ng-container *ngSwitchCase="0">
+    <app-user-info [controlname]="'userInfo'"></app-user-info>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="1">
+    <app-family-info [controlname]="'familyInfo'" ></app-family-info>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="2">
+    <app-creative-section [controlname]="'familyInfo'"></app-creative-section>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <app-summary [parentform]="submittedData"></app-summary>
+  </ng-container>
+  
+</ng-container>
+
+</app-stepper>
+
+<hr>
+<div class="footer">
+  <button (click)="previousStep()" [disabled]="currentStep === 0" [ngClass]="{'button-disabled': currentStep === 0, 'button-enabled' : currentStep > 0}">Previous</button>
+  <button (click)="nextStep()" [disabled]="currentStep === steps.length - 1" [ngClass]="{'button-disabled': currentStep === steps.length-1, 'button-enabled': currentStep < steps.length-1}">Next</button>
+  <button *ngIf="currentStep === steps.length - 1" (click)="submitForms()" class="submit">Submit</button>
+</div>

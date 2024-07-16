@@ -1,0 +1,27 @@
+<div *ngIf="parentform">
+    <h2>Summary</h2>
+    <div>
+      <h3>Personal Information</h3>
+      <p><strong>First Name:</strong> {{ parentform.userInfo.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ parentform.userInfo.lastName }}</p>
+      <p><strong>Email:</strong> {{ parentform.userInfo.email }}</p>
+      <p><strong>Phone:</strong> {{ parentform.userInfo.phone }}</p>
+      <p><strong>Address:</strong> {{ parentform.userInfo.address }}</p>
+      <p><strong>Age:</strong> {{ parentform.userInfo.age }}</p>
+    </div>
+  
+    <div>
+      <h3>Family Information</h3>
+      <div *ngFor="let member of parentform.familyInfo">
+        <p><strong>First Name:</strong> {{ member.firstName }}</p>
+        <p><strong>Last Name:</strong> {{ member.lastName }}</p>
+        <p><strong>Relation:</strong> {{ member.relation }}</p>
+        <p><strong>Age:</strong> {{ member.age }}</p>
+        <div *ngIf="member.images">
+          <h4>Images</h4>
+          <img *ngFor="let image of member.images" [src]="image.preview" alt="Image Preview" width="100">
+        </div>
+      </div>
+    </div>
+  </div>
+  

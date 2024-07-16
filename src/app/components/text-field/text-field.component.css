@@ -1,0 +1,25 @@
+input.ng-touched.ng-invalid {
+    border: 2px solid red;
+}
+
+.form-control-list label {
+    font-size: 20px; 
+}
+
+.form-control-list input {
+    border-radius: 5px;
+    min-height: 30px;
+    background-color: rgb(215, 220, 224);
+}
+
+.errorMessage {
+    padding: 10px;
+    color: red;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Step 3:</h1>
+  <form [formGroup]="creativeForm">
+  <div *ngFor="let member of creativeForm.controls; let memberIndex = index" [formGroupName]="memberIndex" class="cart">
+    <h2>Family Member {{ memberIndex + 1 }}</h2>
+    <div formArrayName="images">
+      <div *ngFor="let image of member.get('images').controls; let imageIndex = index" [formGroupName]="imageIndex">
+        <label for="image{{memberIndex}}-{{imageIndex}}">Image:</label>
+        <input id="image{{memberIndex}}-{{imageIndex}}" type="file" (change)="onFileChange($event, memberIndex, imageIndex)" formControlName="image" [accept]="'image/*'"/>
+        <img *ngIf="image.get('preview').value" [src]="image.get('preview').value" alt="Image Preview" width="100">
+        <div class="btn">
+          <button type="button" (click)="removeImage(memberIndex, imageIndex)">Remove Image</button>
+        </div>
+      </div>
+    </div>
+    <div class="btn">
+      <button type="button" (click)="addImage(memberIndex)">Add Image</button>
+    </div>
+  </div>
+</form>
+</div>

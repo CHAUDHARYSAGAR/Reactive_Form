@@ -1,0 +1,46 @@
+.body { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-enabled {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .button-enabled:hover {
+    background-color: #2d78c7;
+  }
+  
+  .button-disabled {
+    background-color: #e7e7e7;
+    color: black;
+    cursor: not-allowed;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  .submit {
+    color: white;
+    background-color: rgb(74, 158, 74);
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .submit:hover {
+    background-color: rgb(49, 148, 49);
+  }

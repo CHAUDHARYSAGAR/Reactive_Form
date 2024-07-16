@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid blue;
+    max-width: 900px;
+    justify-content: start;
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    padding: 20px;
+}
